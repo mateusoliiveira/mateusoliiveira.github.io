@@ -1,27 +1,87 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
-	<head>
-		<title>Mateus Morais</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
+<head>
+	<title>Comercial</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+</head>
+<body>
 
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Meu github/h1>
-				<p>Seja bem vindo!</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		
-		</footer>
-	</body>
+	<header class="cabecalho">
+		<img class="banner" src="./imagens/banner.png">
+	</header>
+	<img class="logo" src="./imagens/logo.png">
+
+	<nav>
+		<ul id="menu-principal">
+			<li><a href="#">INICIO</a></li>
+			<li><a href="#">QUEM SOMOS</a></li>
+			<li><a href="#">SERVIÇOS</a></li>
+			<li><a href="#">CONTATO</a></li>
+			<li><a href="#">EMPRESARIAL</a></li>
+			<li class="social"><a href="https://www.w3schools.com">	
+			<img border="0" alt="W3Schools" src="./imagens/fb.png" width="25" height="25"></a></li>
+			<li class="social"><a href="https://www.w3schools.com">	
+			<img border="0" alt="W3Schools" src="./imagens/wa.png" width="25" height="25"></a></li>
+			<li class="social"><a href="https://www.w3schools.com">	
+			<img border="0" alt="W3Schools" src="./imagens/ig.png" width="25" height="25"></a></li>
+		</ul>
+	</nav>
+
+		<div id="esqueleto-principal">
+
+			<div>
+				
+				<section class="conteudos">
+					<h1>Por qual motivo escolher QDental?</h1>
+					<p>
+						<img id="myImg" src="./imagens/home1.jpg" alt="Unidade Jabaquara, São Paulo-SP">
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+						  <span class="close">&times;</span>
+						  <img class="modal-content" id="img01">
+						  <div id="caption"></div>
+						</div>
+						<p>
+						Os valores são o conjunto de princípios éticos de uma empresa, que formam o seu código de conduta e estofo moral. Eles são a filosofia que rege o modo de agir da companhia e devem respeitados enquanto a empresa busca cumprir sua missão e atingir os objetivos de sua visão.
+						Os valores organizacionais são, portanto, “as regras do jogo”. Por esse motivo, eles são inegociáveis, ou seja, não deveriam ser abertas exceções sobre sua aplicação.	
+						Os valores organizacionais são, portanto, “as regras do jogo”. Por esse motivo, eles são inegociáveis, ou seja, não deveriam ser abertas exceções sobre sua aplicação.	
+						Os valores empresariais devem se refletir nos comportamentos, nas atitudes e nas decisões de todos os setores da companhia. Eles devem nortear o relacionamento da chefia com os funcionários, as relações entre os trabalhadores e ainda seu comprometimento com os clientes e a sociedade como um todo.					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+	<footer id="rodape">
+
+			<div>Todos os Direitos Reservados</div>
+
+	</footer>
+
+	<script>
+							// Get the modal
+							var modal = document.getElementById('myModal');
+
+							// Get the image and insert it inside the modal - use its "alt" text as a caption
+							var img = document.getElementById('myImg');
+							var modalImg = document.getElementById("img01");
+							var captionText = document.getElementById("caption");
+							img.onclick = function(){
+							  modal.style.display = "block";
+							  modalImg.src = this.src;
+							  captionText.innerHTML = this.alt;
+							}
+
+							// Get the <span> element that closes the modal
+							var span = document.getElementsByClassName("close")[0];
+
+							// When the user clicks on <span> (x), close the modal
+							span.onclick = function() { 
+							  modal.style.display = "none";
+							}
+						</script>
+
+</body>
 </html>
