@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Posterama 2001 W04 Regular';
+    src: url('./font/posterama2001.ttf');
+}
+
+body {
+    background-color: rgb(196, 249, 255);
+    margin: 0;
+    color: #777;
+    height: 100%;
+}
+
+.cabecalho {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+.banner {
+    position: absolute;
+    top: -8px;
+    left: 14.75em;
+    width: 75%;
+    opacity: 40%;
+    z-index: -1;
+  }
+
+.logo {
+    position: relative;
+    top: -10px;
+    left: 350px;
+    width: 12.5%;
+    padding: 35px;
+    }
+
+#menu-principal {
+    display: inline;
+    float: left;
+    background: rgb(181, 238, 250);
+    height: 90px;
+	width: 63%;
+    margin-top: -18px;
+	margin-left: 330px;
+    list-style: none;
+    font-family:"Posterama 2001 W04 Regular" !important;
+	font-size:20px;font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.3px;
+	-moz-osx-font-smoothing: grayscale;
+	border-radius: 30px;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 15px;
+    margin-top: 32.5px;
+}
+
+nav ul li.social {
+    float: right;
+    margin-right: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline;
+    list-style: none;
+
+}
+
+nav ul li a {
+	text-decoration: none;
+	padding: 6px;
+
+}
+
+/* link não visitado */
+nav ul li a:link {
+  
+}
+
+/* link visitado */
+nav ul li a:visited {
+  color: white;
+}
+
+/* mouse em cima do link */
+nav ul li a:hover {
+  color: white;
+  background-color: rgb(130, 205, 255);
+  border-radius: 5px;
+}
+
+nav ul li.social a:hover {
+  color: white;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* link selecionado */
+a:active {
+  color: grey;
+}
+
+#esqueleto-principal {
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    height: 1000px;
+	width: 75%;
+    margin-top: 35px;
+    border-radius: 1px;
+}
+
+.conteudos {
+    background-color: rgb(210, 242, 255);
+    height: 100%;
+	width: 66%;
+    margin: auto;
+    padding: 50px;
+    font-family: 'Alegreya Sans SC';font-size: 22px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+p img {
+    width: 400px;
+    float: left;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+/*galerias*/
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+
+#rodape {
+    background: black;
+    font-family:"Posterama 2001 W04 Regular" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.3px;
+    -moz-osx-font-smoothing: grayscale;
+    margin: auto;
+    margin-left: 50px;
+}
