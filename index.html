@@ -1,64 +1,82 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Comercial</title>
+	<title>Parallax</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
-	<header class="cabecalho">
-		<img class="banner" src="./imagens/banner.png">
-	</header>
-	<img class="logo" src="./imagens/logo.png">
+	 <div class="bg-img">
+  <div class="container">
+    <div class="topnav">
+      <a href="#home">Contato</a>
+      <a href="#news">Certificações</a>
+      <a href="#contact">Github</a>
+      <a href="#about">Referências</a>
+    </div>
+  </div>
+</div> 
 
-	<nav>
-		<ul id="menu-principal">
-			<li><a href="#">INICIO</a></li>
-			<li><a href="#">QUEM SOMOS</a></li>
-			<li><a href="#">SERVIÇOS</a></li>
-			<li><a href="#">CONTATO</a></li>
-			<li><a href="#">EMPRESARIAL</a></li>
-			<li class="social"><a href="https://www.w3schools.com">	
-			<img border="0" alt="W3Schools" src="./imagens/fb.png" width="25" height="25"></a></li>
-			<li class="social"><a href="https://www.w3schools.com">	
-			<img border="0" alt="W3Schools" src="./imagens/wa.png" width="25" height="25"></a></li>
-			<li class="social"><a href="https://www.w3schools.com">	
-			<img border="0" alt="W3Schools" src="./imagens/ig.png" width="25" height="25"></a></li>
-		</ul>
-	</nav>
+	<div class="caixa1">
+		<div class="conteudo-titulo">
+			<p class="titulo">Mateus Morais<br>
+			FRONT-END DEVELOPER_</p>
+		</div>
+	</div>
 
-		<div id="esqueleto-principal">
+	<div class="conteudo1">
+			<h1 class="titulo">Sobre</h1><br>
+			<p class="titulo">Jovem programador de 24 anos, residente do ES, com 01 ano de experiência teórica e prática (em projetos pessoais) na área. Focado no desenvolvimento web, com enfoque, por agora, em front-end, também empreendo estudos no back-end, adquirindo conhecimentos em node.js e PHP.</p>
+	</div>
 
-			<div>
-				
-				<section class="conteudos">
-					<h1>Por qual motivo escolher QDental?</h1>
-					<p>
-						<img id="myImg" src="./imagens/home1.jpg" alt="Unidade Jabaquara, São Paulo-SP">
+	<div class="caixa2">
+		<div class="conteudo-titulo">
+			<p class="titulo">Habilidades_</p>
+		</div>
+	</div>
+
+	<div class="conteudo1">
+		<h1 class="titulo">DE...</h1><br>
+			<img src="imagens/skills.png"><br>
+		<h1 class="titulo">...até</h1><br>
+			<img src="imagens/back.png">
+	</div>
+
+	<div class="caixa3">
+		<div class="conteudo-titulo">
+			<p class="titulo">PROJETOS PESSOAIS_</p>
+		</div>
+	</div>
+
+	<div class="conteudo1">
+		<h1 class="titulo">Clique em cada um para ver mais</h1><br>
+			<img id="myImg" src="./imagens/site1.png" width="30%" alt="Site para clínica odontológica baseado em H5, C3 E JS.">
+			<img id="myImg1" src="./imagens/site2.png" width="30%" alt="Rede social baseada em H5 e C3.">
 						<!-- The Modal -->
 						<div id="myModal" class="modal">
 						  <span class="close">&times;</span>
 						  <img class="modal-content" id="img01">
 						  <div id="caption"></div>
 						</div>
-						<p>
-						Os valores são o conjunto de princípios éticos de uma empresa, que formam o seu código de conduta e estofo moral. Eles são a filosofia que rege o modo de agir da companhia e devem respeitados enquanto a empresa busca cumprir sua missão e atingir os objetivos de sua visão.
-						Os valores organizacionais são, portanto, “as regras do jogo”. Por esse motivo, eles são inegociáveis, ou seja, não deveriam ser abertas exceções sobre sua aplicação.	
-						Os valores organizacionais são, portanto, “as regras do jogo”. Por esse motivo, eles são inegociáveis, ou seja, não deveriam ser abertas exceções sobre sua aplicação.	
-						Os valores empresariais devem se refletir nos comportamentos, nas atitudes e nas decisões de todos os setores da companhia. Eles devem nortear o relacionamento da chefia com os funcionários, as relações entre os trabalhadores e ainda seu comprometimento com os clientes e a sociedade como um todo.					</p>
-				</section>
+						<div id="myModal" class="modal">
+						  <span class="close">&times;</span>
+						  <img class="modal-content" id="img01">
+						  <div id="caption"></div>
+						</div>
+	</div>
 
-			</div>
-
+	<div class="caixa4">
+		<div class="conteudo-titulo">
+			<p class="titulo">VAMOS?_</p>
+			
 		</div>
-
-	<footer id="rodape">
-
-			<div>Todos os Direitos Reservados</div>
-
-	</footer>
+	</div>
+	
+	<div class="conteudo1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<div id="top" onclick="toTop()"><img src="imagens/top.jpg"/></div>
+	</div>
 
 	<script>
 							// Get the modal
@@ -81,6 +99,52 @@
 							span.onclick = function() { 
 							  modal.style.display = "none";
 							}
+						</script>
+						<script>
+							// Get the modal
+							var modal = document.getElementById('myModal');
+
+							// Get the image and insert it inside the modal - use its "alt" text as a caption
+							var img = document.getElementById('myImg1');
+							var modalImg = document.getElementById("img01");
+							var captionText = document.getElementById("caption");
+							img.onclick = function(){
+							  modal.style.display = "block";
+							  modalImg.src = this.src;
+							  captionText.innerHTML = this.alt;
+							}
+
+							// Get the <span> element that closes the modal
+							var span = document.getElementsByClassName("close")[0];
+
+							// When the user clicks on <span> (x), close the modal
+							span.onclick = function() { 
+							  modal.style.display = "none";
+							}
+						</script>
+						<script>
+													$(document).ready(function(){
+						    $("#top").hide();
+						    $(function toTop() {
+						        $(window).scroll(function () {
+						            if ($(this).scrollTop() > 100) {
+						                $('#top').fadeIn();
+						            } else {
+						                $('#top').fadeOut();
+						            }
+						        });
+
+						        $('#top').click(function () {
+						            $('body,html').animate({
+						                scrollTop: 0
+						            }, 800);
+						            return false;
+						        });
+						    });         
+						            
+						            
+						    
+						    });
 						</script>
 
 </body>
