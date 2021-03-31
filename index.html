@@ -21,13 +21,14 @@
 	<div class="caixa1">
 		<div class="conteudo-titulo">
 			<p class="titulo">Mateus Morais<br>
-			FRONT-END DEVELOPER_</p>
+			JR. FRONT-END DEVELOPER_</p>
 		</div>
 	</div>
 
 	<div class="conteudo1">
 			<h1 class="titulo">Sobre</h1><br>
-			<p class="titulo">Jovem programador de 24 anos, residente do ES, com 01 ano de experiência teórica e prática (em projetos pessoais) na área. Focado no desenvolvimento web, com enfoque, por agora, em front-end, também empreendo estudos no back-end, adquirindo conhecimentos em node.js e PHP.</p>
+			<p class="titulo">Programador de 24 anos, residente do ES, com 01 ano de experiência teórica e prática (em projetos pessoais) na área. Focado no desenvolvimento web, com enfoque, por agora, em front-end, também empreendo estudos no back-end, adquirindo conhecimentos em node.js e PHP.</p><br>
+			<p class="titulo" style="font-weight: bold;text-align: center;">Sempre buscando evoluir.</p>
 	</div>
 
 	<div class="caixa2">
@@ -41,6 +42,9 @@
 			<img src="imagens/skills.png"><br>
 		<h1 class="titulo">...até</h1><br>
 			<img src="imagens/back.png">
+		<div>
+		    <section>First</section>
+		</div>
 	</div>
 
 	<div class="caixa3">
@@ -54,16 +58,16 @@
 			<img id="myImg" src="./imagens/site1.png" width="30%" alt="Site para clínica odontológica baseado em H5, C3 E JS.">
 			<img id="myImg1" src="./imagens/site2.png" width="30%" alt="Rede social baseada em H5 e C3.">
 						<!-- The Modal -->
-						<div id="myModal" class="modal">
-						  <span class="close">&times;</span>
-						  <img class="modal-content" id="img01">
-						  <div id="caption"></div>
-						</div>
-						<div id="myModal" class="modal">
-						  <span class="close">&times;</span>
-						  <img class="modal-content" id="img01">
-						  <div id="caption"></div>
-						</div>
+			<div id="myModal" class="modal">
+			  <span class="close">&times;</span>
+			  <img class="modal-content" id="img01">
+			  <div id="caption"></div>
+			</div>
+			<div id="myModal" class="modal">
+			  <span class="close">&times;</span>
+			  <img class="modal-content" id="img01">
+			  <div id="caption"></div>
+			</div>
 	</div>
 
 	<div class="caixa4">
@@ -99,6 +103,29 @@
 							span.onclick = function() { 
 							  modal.style.display = "none";
 							}
+						</script>
+						<script>
+								$(window).scroll(function(){
+								var st = $(this).scrollTop(),
+							    winH = $(this).height(),
+							    /* you can set this add, 
+							    depends on where you want the animation to start
+							    for example if the section height is 100 and you set add of 50,
+							    that means if 50% of the section is revealed 
+							    on the bottom of viewport animate text
+							    */
+							    add = 150;
+
+								$('.conteudo1').each(function(){
+							    var pos = $(this).position().top;
+
+							    if(st + winH >= pos + add){
+							        $(this).stop().animate({opacity:1, marginTop:10},'fast');
+							    }else{
+							        $(this).stop().animate({opacity:0, marginTop:0},'fast');
+							    }
+							});
+							});
 						</script>
 						<script>
 							// Get the modal
