@@ -1,0 +1,280 @@
+body {
+    background:black;
+}
+
+header {
+	background-image: url(bannerlogo.jpg);
+	width: 100%;
+    height: 200px;
+    background-color: black;
+	background-position: center;
+	opacity: 0.5;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-shadow: 4px 4px #000000;
+	text-align: center;
+	
+}
+
+#cabecalho h1 {
+    font-size: 45px;
+	display: flex;
+	display: inline-block;
+	margin-top: 50px;
+
+}
+
+.fundoCalculadora1 {
+    width: 49.8%;
+    height: 400px;
+    background-color:rgba(255, 255, 255, 0.041);
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.fundoCalculadora2 {
+    width: 49.8%;
+    height: 400px;
+    background-color:rgba(255, 255, 255, 0.041);
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    float: right;
+}
+
+.fundoCalculadora1, .fundoCalculadora2 {
+    margin: auto;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.fundoCalculadora3 {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255, 255, 255, 0.041);
+    padding: 15px;
+    text-align: center;
+	margin-top: 25px;
+}
+
+.fundoCalculadora4 {
+    width: 98%;
+    height: 500px;
+    background-color:rgba(255, 255, 255, 0.041);
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.calculadora-combustiveis input {
+    display: block;
+    position: relative;
+    margin: auto;
+    outline: none;
+    border: 0px;
+    padding-top: 10px;
+}
+
+input[type=text] {
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    color: white;
+}
+
+.resultado {
+    color: white;
+    border-bottom: 1px solid #64ff8b;
+    width: 25%;
+    position: relative;
+    display: inline;
+    padding-top: 15px;
+}
+
+.resultadoCalc2 {
+    color: white;
+    border-bottom: 1px solid #64ff8b;
+    width: 25%;
+    position: relative;
+    display: inline;
+    padding-top: 15px;
+}
+
+.calculadora-combustiveis p {
+    display: inline-block;
+    padding-top: 16px;
+}
+
+.__range input
+{
+  outline: none;
+	-webkit-appearance: none;
+	background-color: #aaa;
+	height: 3px;
+	width: 100%;
+	margin: 10px auto;
+}
+.__range input::-webkit-slider-thumb
+{
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	border-radius: 50%;
+	cursor: -moz-grab;
+	cursor: -webkit-grab; 
+}            
+.__range input::-moz-range-thumb
+{
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	border-radius: 50%;
+	cursor: -moz-grab;
+	cursor: -webkit-grab; 
+}
+.__range input::-ms-thumb
+{
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	border-radius: 50%;
+	cursor: -moz-grab;
+	cursor: -webkit-grab; 
+}
+.__range-step{
+	position: relative;                
+}
+
+.__range-max{
+	float: right;
+}
+.__range-step input::-webkit-slider-thumb
+{
+	background: transparent;
+}            
+.__range-step input::-moz-range-thumb
+{
+	background: transparent;
+}
+.__range-step input::-ms-thumb
+{
+	background: transparent;
+}
+.__range-step datalist {
+	position:relative;
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	bottom: 16px;
+	/* disable text selection */
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */                
+	user-select: none; /* Standard */
+	/* disable click events */
+	pointer-events:none;  
+}
+.__range-step datalist option {
+	width: 10px;
+	height: 10px;
+	min-height: 10px;
+	border-radius: 100px;
+	/* hide text */
+	white-space: nowrap;       
+  padding:0;
+  line-height: 40px;
+}
+
+
+ .__range-step-popup output 
+{ 
+	position: absolute;
+	background-color: green;                
+	width: 30px;
+	height: 30px; 
+	text-align: center; 
+	color: white; 
+	border-radius: 100px; 
+	display: inline-block; 
+	font-size:12px;
+	bottom: 100%;
+	left: 0;
+	vertical-align: middle;
+	line-height: 30px;
+}
+.__range-step-popup .__range-output-square{
+	padding: 0 5px; 
+	min-width: 25px;
+	width: auto !important;                
+	border-radius: 5px !important;
+}
+.__range-step-popup output:after 
+{ 
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 10px solid green;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	top: 90%;
+	left: 50%;
+	margin-left: -10px;
+	margin-top: -1px;
+}
+.__range-step-popup datalist{
+  overflow:hidden;
+}
+.__range-step{
+  margin:0 40px;
+}
+.__range-step-popup{
+  margin:40px 40px;
+}
+
+.navbar {
+	height: 150px;
+}
+
+#comb {
+	background-image: url(combustivel.jpg);
+	background-position: center;
+    text-align: center;
+	opacity: 0.5;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#kwh {
+	background-image: url(kwh.jpg);
+	background-position: center;
+    text-align: center;
+	opacity: 0.5;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#loteria {
+	background-image: url(loteria.jpg);
+	background-position: center;
+    text-align: center;
+	opacity: 0.5;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+span {
+	color: white;
+	opacity: 1;
+	text-shadow: 2px 2px #000000;
+}
+
+textarea {
+	width: 100%;
+}
