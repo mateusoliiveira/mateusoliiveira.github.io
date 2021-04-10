@@ -35,10 +35,6 @@
             var parcialkwh = (bateriaKwh / autonomiaBateria) / 100
             var resultadoKwhCarros = (parcialkwh * precoKwhCarros).toFixed(2)
 
-            if (isNaN(resultadoKwhCarros)) {
-              return '...';
-            }
-
             document.getElementById("resultadoKwhEletricos").innerHTML = 'R$' + resultadoKwhCarros
             }
 
@@ -64,11 +60,6 @@
 
             var VF1 = (resultadoCombustivel - resultadoKwhCarros) / resultadoCombustivel * 100
             var VF2 = (resultadoCombustivel - resultadoKwhCarros) / resultadoKwhCarros * 100
-
-
-            if (VF1 == isNaN() && VF2 == isNaN()) {
-              return '...';
-            }
 
             if (VF1 <= 0 && VF2 >= 0) {
               document.getElementById("resultadoEficiencia1").style.borderBottom = "1px solid red"
@@ -96,7 +87,6 @@
             Number(tempo)
             Number(dias)
 
-            
             var resultadoKwh = ((potencia * dias * tempo) / 1000 * custoLocal)
 
             resultadoKwh.toFixed(2)
@@ -119,7 +109,7 @@
             return resultadosArr;
           }
 
-        document.getElementById("resultadoLoteria1").innerHTML += `Megasena: ${(generateRandomArr(6, 60, 1))} | \r\n`
+        document.getElementById("resultadoLoteria1").innerHTML += `Megasena: ${(geraArray(6, 60, 1))} | \r\n`
 
         } else if (loteria == 2) {
      
@@ -132,7 +122,7 @@
             }
             return resultadosArr;
           }
-        document.getElementById("resultadoLoteria1").innerHTML += `Lotofacil: ${(generateRandomArr(15, 25, 1))} | \r\n`
+        document.getElementById("resultadoLoteria1").innerHTML += `Lotofacil: ${(geraArray(15, 25, 1))} | \r\n`
 
       } else {
 
@@ -145,7 +135,7 @@
             return resultadosArr;
           }
 
-        document.getElementById("resultadoLoteria1").innerHTML += `Quina: ${(generateRandomArr(5, 80, 1))} | \r\n`
+        document.getElementById("resultadoLoteria1").innerHTML += `Quina: ${(geraArray(5, 80, 1))} | \r\n`
 
     
       }
