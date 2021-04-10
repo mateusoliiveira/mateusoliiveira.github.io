@@ -99,16 +99,7 @@
             
             var resultadoKwh = ((potencia * dias * tempo) / 1000 * custoLocal)
 
-            /*var tempo = (horas * minutos) / 60
-            var kw = (potencia / 1000) * tempo
-            var U = (potencia * tempo) * dias
-            var resultadoKwh = U * custoLocal*/
-
             resultadoKwh.toFixed(2)
-            
-            if (isNaN(resultadoKwh)) {
-              return '...';
-            }
 
             document.getElementById("resultadoKwh").innerHTML = 'R$' + resultadoKwh
             }            
@@ -119,15 +110,13 @@
 
       if (loteria == 1) {
 
-
-
-          function generateRandomArr(length, max, min) {
-            const resultsArr = [];
+          function geraArray(length, max, min) {
+            const resultadosArr = [];
             for (let i = 0; i < length; i++) {
-              const newNumber = Math.floor(Math.random() * (max - min)) + min;
-              resultsArr.includes(newNumber) ? length += 1 : resultsArr.push(newNumber);
+              const novoNumero = Math.floor(Math.random() * (max - min)) + min;
+              resultadosArr.includes(novoNumero) ? length += 1 : resultadosArr.push(novoNumero);
             }
-            return resultsArr;
+            return resultadosArr;
           }
 
         document.getElementById("resultadoLoteria1").innerHTML += `Megasena: ${(generateRandomArr(6, 60, 1))} | \r\n`
@@ -135,25 +124,25 @@
         } else if (loteria == 2) {
      
 
-        function generateRandomArr(length, max, min) {
-            const resultsArr = [];
+        function geraArray(length, max, min) {
+            const resultadosArr = [];
             for (let i = 0; i < length; i++) {
-              const newNumber = Math.floor(Math.random() * (max - min)) + min;
-              resultsArr.includes(newNumber) ? length += 1 : resultsArr.push(newNumber);
+              const novoNumero = Math.floor(Math.random() * (max - min)) + min;
+              resultadosArr.includes(novoNumero) ? length += 1 : resultadosArr.push(novoNumero);
             }
-            return resultsArr;
+            return resultadosArr;
           }
         document.getElementById("resultadoLoteria1").innerHTML += `Lotofacil: ${(generateRandomArr(15, 25, 1))} | \r\n`
 
       } else {
 
-        function generateRandomArr(length, max, min) {
-            const resultsArr = [];
+        function geraArray(length, max, min) {
+            const resultadosArr = [];
             for (let i = 0; i < length; i++) {
-              const newNumber = Math.floor(Math.random() * (max - min)) + min;
-              resultsArr.includes(newNumber) ? length += 1 : resultsArr.push(newNumber);
+              const novoNumero = Math.floor(Math.random() * (max - min)) + min;
+              resultadosArr.includes(novoNumero) ? length += 1 : resultadosArr.push(novoNumero);
             }
-            return resultsArr;
+            return resultadosArr;
           }
 
         document.getElementById("resultadoLoteria1").innerHTML += `Quina: ${(generateRandomArr(5, 80, 1))} | \r\n`
@@ -163,19 +152,6 @@
       
     }
                           
-        
-
-
-                                
-    //           function geradorLoteria() {
-    //                     
-    //               for(let s = 1; s <= 6; s++) {
-
-    //                       document.getElementById("resultadoLoteria").innerHTML += `${geraNumeros(1, 60)} - `
-
-    //           }
-    //               
-    //   }
       
         
     </script>
