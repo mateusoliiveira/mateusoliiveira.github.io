@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Helvetica Neue CE 35 Thin";
+    src: url("1570d2f0f10dfe605a65f3d7c91108b6.eot"); /* IE9*/
+    src: url("1570d2f0f10dfe605a65f3d7c91108b6.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("1570d2f0f10dfe605a65f3d7c91108b6.woff2") format("woff2"), /* chrome、firefox */
+    url("1570d2f0f10dfe605a65f3d7c91108b6.woff") format("woff"), /* chrome、firefox */
+    url("1570d2f0f10dfe605a65f3d7c91108b6.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("1570d2f0f10dfe605a65f3d7c91108b6.svg#Helvetica Neue CE 35 Thin") format("svg"); /* iOS 4.1- */
+  }
+
+* {
+    font-family:"Helvetica Neue CE 35 Thin" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+@media (max-width: 720px)
+{
+  .card
+   {
+    margin-bottom: 10%;
+   }
+   #foto-bio {
+       margin-bottom: 3%;
+   }
+}
+
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+#separadores {
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#container1 {
+    margin-top: 50px;
+    text-align: justify;
+}
+
+#tecnologias {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+}
+
+#container2 {
+    margin-top: 3%;
+}
+
+#carouselExampleIndicators {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.underline {
+    animation-name: piscarUnderline;
+    -webkit-animation-name: piscarUnderline;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+    transition: all 0.01s 0.01s;
+    animation-fill-mode: forwards;
+    animation: piscarUnderline 1.25s infinite;
+}
+
+@keyframes piscarUnderline { 
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+
+
+.linha {
+    animation-name: linhaVerde;
+    -webkit-animation-name: linhaVerde;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+    transition: all 0.01s 0.01s;
+    animation-fill-mode: forwards;
+    animation: linhaVerde 1.25s infinite;
+    height: 500px;
+    position: relative;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+    text-align: center;
+    overflow: auto;
+
+    
+}
+
+@keyframes linhaVerde { 
+    from {
+        border-left: 5px solid rgb(206, 206, 206);
+        }
+    to {
+        border-left: 5px solid green;
+        }
+}
+
+.bolas {
+    animation-name: bolasVerde;
+    -webkit-animation-name: bolasVerde;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+    transition: all 0.01s 0.01s;
+    animation-fill-mode: forwards;
+    animation: bolasVerde 1.25s infinite;
+    height: 500px;
+    position: relative;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+    text-align: center;
+    overflow: auto;
+    margin-top: -500px;
+    margin-left: -7.5px;
+    
+}
+
+@keyframes bolasVerde { 
+    from {
+        border-left: 15px dotted rgb(206, 206, 206);
+        }
+    to {
+        border-left: 15px dotted green;
+        }
+}
+
+.textoLinhas {
+    margin-left: -1000px;
+    text-align: center;
+    position: relative;
+    border: 1px solid red;
+    
+}
+
+.card:hover {
+    box-shadow: 0 0 0.5em rgb(0, 132, 255);
+}
