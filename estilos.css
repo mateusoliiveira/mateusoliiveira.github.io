@@ -41,36 +41,6 @@ body {
     }
 }
 
-
-.linha {
-    animation-name: linhaVerde;
-    -webkit-animation-name: linhaVerde;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
-    transition: all 0.01s 0.01s;
-    animation-fill-mode: forwards;
-    animation: linhaVerde 1.25s infinite;
-    height: 500px;
-    position: relative;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-    text-align: center;
-    overflow: auto;
-
-    
-}
-
-@keyframes linhaVerde { 
-    from {
-        border-left: 5px solid rgb(206, 206, 206);
-        }
-    to {
-        border-left: 5px solid green;
-        }
-}
-
 .card:hover {
     box-shadow: 0 0 0.5em rgb(0, 132, 255);
 }
