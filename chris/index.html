@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Everybody Loves Random</title>
+
+    <style>
+        @font-face {
+            font-family: "Copper Black";
+            src: url("./CooperBlackRegular.ttf") format("woff2");
+        }
+        @font-face {
+            font-family: "Revival 565 Std Roman";
+            src: url("./RevivalRoman.otf");
+        }
+
+        body {
+            background-color: black;
+        }
+
+        #fontMain {
+            font-family: "Copper Black";
+        }
+
+        #fontBody {
+            font-family: "Revival 565 Std Roman";
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="d-flex justify-content-center text-center mt-5 text-light">
+        <div class="">
+            <h2 id="fontMain">Everybody Loves Random</h2>
+            <button class="btn btn-primary btn-lg mt-3" onclick="episodioAleatorio()">Assistir!</button>
+        </div>
+    </div>
+
+    <div id="fontBody" class="d-flex justify-content-center h1 text-light" style="margin-top:15%;">
+        <div class="text-center">
+            <h1>BROOKLYN</h1>
+            <h1 id="ano"></h1>
+        </div>  
+    </div>
+
+    <script>
+        function episodioAleatorio() {
+        let eps = [
+        'https://www.primevideo.com/detail/0KAGAAQW3KBLK4VFA450XN5G3D/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0MJFVXDGXGDTV5S6UN5HPZGO5T/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0JKVKIRGN0WJWTA64GNBL7FXLW/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0QKD9ZYRMPH2H5I4WLYQZKCVAK/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FBF9UUAH9ARU7R0UJ1CMREH6V/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0L4AGDEJI3DWFXMQKM82FGJMU5/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0G0ZZMTWG52V9YO8VB1MRPXKWF/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0RE7G2MGDGE68W06WOLYWK5TZS/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FJY6G6A3MCCJ6ZHP2GSJUE057/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0MAWZC1QNGUHV9BD1ZEWJD4E6E/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HX78DGRDSWIYXHB6OHNK313AB/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0H7MILH7KNDLTQINP95JXLVULG/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0T1VS7XG7KAMIDEEZNML3V7HPX/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0KVRJS2U9WI7E3OM6HXPFMROXT/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HSXS2SWTXZPX7E4VE5MADNTOT/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0U8IB6KPHZDSDJH8QUIAYIY659/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0GQKPETN78H708SB9V7CFTIK19/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HOOBS543XSSBPX71UWA83FKRA/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0QSW6LB0WVQYO4UL01MZHXKJPA/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0MJFVXDUU0QG4X1LF618V6TEAX/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0STCVMLRPUXMY4SNV06QC3SNXC/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FJY6G6I2X4JL44P24MOVNTT8Z/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0U48UW5AC394AL99OMAW3QLKF1/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0LLC9KAQN1427OVFROKF57CN38/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FO7MR2PSIF7K9PFCV2CN5D4VR/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0M2E2QYHW8ITAOZA7DMG3HFOIH/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0LPLPUYRT1L62NJI66XV5P2FR7/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0NQ2EW9K0ZFYLZ5YQDLU6MO9FQ/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0KIZ6WBQUN73NWHSHRZHTZND8S/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0QX5MW7M9SA25FD7P1CI6MJRWB/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0RV999IYNG3YUGKZKEPGCK138M/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0IE91KD9SR801XLOVGNMYOFNBA/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PDQR1KQLKUTWWTNQ9DHUSG07F/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FJY6GFDTD4N771H5GMKPE4I0U/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0QBUDEWARHVYDO0W190P4POFM3/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0GI1STQNQBQP7RTEP08H004T8A/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FBF9V3NP1LU6W8LEAEVIUIKY3/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0LCTCYZMJWNNSN82KCM5WWYRL2/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HX78DPSCY552A3RWXGO5JHLX2/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0N4R5EYKA51DK234HTCI3BJHV7/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PUSK88T7GS3MJL9DTYNB2EEA1/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0MF6FMZ9B9X1FSJT1HIXP4LKC5/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HOOBSEJNB7MTMQRDIULD2SNCA/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FSH31RU9UW11237QHECRD0A3Z/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0R5OJHSHNFH40FZVI7DYZOZ9NK/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0SGKIR3MOQXEELL5274E6Q53QW/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0IR1EGM2KVM1J35JFVH3NJE89Z/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0TVPYB2QXDOT8S2MKZU8I9I3KR/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0RV999S5DDYKOA1WM97DCM4JIR/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0JTEH4LEPBIZTUAHJSYOZSI6CK/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0K66U0L86Y0N40TWHV6AJDU2W5/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0HG5F7B3Q28EA70GMD4OJHDFEC/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0T1VS8FEGJD91WTAAGVNS4BZ5E/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0FWQJCO2OATPVXQOP370P36SX8/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0SCB2GFWMJ0X6I0U9R1VIEO5TJ/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0JGM48LNR4CRB2C5IR1XNYZYUF/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0RV999SDFLDVIE01SKEM35GA3S/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PI07CHXON0NSIDJTPJ8GO5CGG/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0NDA20J8MMZNPS57WJMK2OF815/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0KVRJSKVP3SU9XOZN9QFI86B5Y/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0MRYSJ7P0ZNKPF114QZTCVNGAH/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0NQ2EWIYBLK19YMI18HUWHT937/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PI07CHVH7S8X35PJ799BDEODD/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0T658J3JZFB8B6X38B9CJAA6DP/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0SGKIR3Y194ENQVI30GLACB3EJ/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PZ20J5NXNR4T3IYPF6ZG26EYI/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0KRI3I1RVYIDHGFF19NEKBXIIQ/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0QKDA0LZI8JP8J2G7Y1TOSOBJ3/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0IIIHVFC4X3TTAKVVZUZDPCJGL/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0NUBV7BUNFAB83O64FC125UG46/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0IIIHVFE1LOLR3LGC5HNMCQIMH/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0SKTZ1WQ57YLIQKWX0YD0P7QQ9/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0OSFHKN8XZCUQZM49X4PMVVI9O/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0GQKPFGLFE9OVIRQV05JX5XH6C/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0TN71PW4HRBXKTOL7KN381KPOL/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0L4AGE1UVJA9GONHEV30NWL29H/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0GI1SU4WGPX7GFGWMVENY4D8UZ/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0P57UGN7DT3FJMVUWJZMGAAWCB/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0TRGI0K5ONHDGAVNWSYZFCY9OF/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0JP50U2T05WQR4QN2F0WVP614Q/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0G0ZZNH8DG9D1UPC6YLTJVZLZM/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0J3TRCR78SWB5VT6KYP45Z4TWF/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0OWOXVBK5T7KZ9OA2L4NOJ6ZN6/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0SXMBXWQ9XR5M6YOHWBJWWNORC/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0OWOXVBENVAOC8ZEE5OA3IZXF8/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0KAGABEHKYJY8MKDYL3Z528AA7/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0PDQR1Z2P90GZYO4OWW9E4O2GC/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',
+        'https://www.primevideo.com/detail/0L8JWOPZTYFFWAVBVVPVV09DSY/ref=atv_dp_btf_el_prime_hd_tv_wfb_t1ADAAAAAA0wg0?autoplay=1&t=0',]
+        let numeroAleatorio = Math.floor(Math.random() * 88) + 1;
+        window.open(eps[numeroAleatorio],'_blank');
+        }
+
+        function brooklyn(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        document.getElementById('ano').innerHTML = (Math.round(brooklyn(1982, 1987)))
+
+        
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  </body>
+</html>
