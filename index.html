@@ -166,7 +166,7 @@
     year: function(newYear) {
       console.log(`watch triggered, value of id is: ${newYear}`);
       axios
-        .get(`http://ergast.com/api/f1/${this.year}/drivers.json`)
+        .get(`https://ergast.com/api/f1/${this.year}/drivers.json`)
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
         }).catch((error) => {
@@ -176,7 +176,7 @@
   },
   created: async function ()  {
       axios
-        .get(`http://ergast.com/api/f1/${this.year}/drivers.json`)
+        .get(`https://ergast.com/api/f1/${this.year}/drivers.json`)
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
         }).catch((error) => {
