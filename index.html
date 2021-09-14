@@ -45,6 +45,19 @@
           border-radius: 5px;
           margin-bottom: 2vh;
           transition: background-color 0.25s linear;
+          animation-name: showingData;
+          animation-duration: 0.5s;
+          animation-iteration-count: 1;
+      }
+      @keyframes showingData {
+        0% {
+          opacity: 0;
+          margin-left: 0;
+        }
+        100% {
+          opacity: 1;
+          margin-left: -10;
+        }
       }
       .driversBox:hover {
           background-color: rgba(255, 255, 255, 0.2);
@@ -132,13 +145,13 @@
           background-size: 600%;
       }
       @keyframes backgroundgradient {
-        0% {
-          background-position-x: 0%;
+          0% {
+            background-position-x: 0%;
 
-        }
-        100% {
-          background-position-x: 100%;
-        }
+          }
+          100% {
+            background-position-x: 100%;
+          }
       }
 
       header p {
@@ -157,6 +170,12 @@
           margin-right: auto;
           width: 8em;
       }
+      .loadingImg {
+          width: 25%;
+          margin-left: auto;
+          margin-right: auto;
+          display: flex;
+      }
     </style>
   </head>
   <body>
@@ -169,7 +188,8 @@
       <input type="text" v-model="findName" placeholder="pesquisar por nome, ex: lewis" @keyup="resultSearched(findName)" />
       <p style="color: white;margin: 25px;">Procurando por: {{findName}} </p>
     </div>
-    <div class="driversBox" v-for="(driver) in filteredDrivers" :key="driver.url">
+    <img class="loadingImg" src="https://i.pinimg.com/originals/cc/3c/8c/cc3c8c6e11c26d1ee8926f54234ab89b.gif" v-if="loading" />
+    <div class="driversBox" v-for="(driver) in filteredDrivers" v-else :key="driver.url">
        <div class="drivers">
         <div>
           <span class="firstName">{{ driver.givenName }}</span><span class="secondName"> {{ driver.familyName }}</span>
@@ -191,7 +211,8 @@
         findName: null,
         year: 2021,
         yearChanged: 2021,
-        filteredDrivers: []
+        filteredDrivers: [],
+        loading: true
       }
   },
   methods: {
@@ -219,14 +240,16 @@
   },
   watch: {
     year: function(newYear) {
-      console.log(`watch triggered, value of id is: ${newYear}`);
+      this.loading = true;
       axios
         .get(`https://ergast.com/api/f1/${this.year}/drivers.json`)
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
           this.filteredDrivers = res.data.MRData.DriverTable.Drivers
+          this.loading = false;
         }).catch((error) => {
             console.log(error);
+            this.loading = false;
         })
     }
   },
@@ -236,8 +259,10 @@
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
           this.filteredDrivers = res.data.MRData.DriverTable.Drivers
+          this.loading = false;
         }).catch((error) => {
             console.log(error);
+            this.loading = false;
         })
   },
 })
