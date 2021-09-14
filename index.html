@@ -16,26 +16,131 @@
     />
     <style>
       #app {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: #2c3e50;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          color: #2c3e50;
       }
       body {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-        background-color: black;
-        color: white;
-        font-family: "Lexend", sans-serif !important;
+          padding: 0px;
+          margin: 0px;
+          box-sizing: border-box;
+          background-color: black;
+          color: white;
+          font-family: "Lexend", sans-serif !important;
+      }
+      .input {
+          margin: auto 0;
+          width: 15%;
+      }
+      .input input {
+          margin: auto 0;
+          width: 50vh;
+      }
+      .driversBox {
+          padding: 2vh;
+          margin: 0 3vh 0 3vh;
+          list-style-type: none;
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 2px solid grey;
+          border-radius: 5px;
+          margin-bottom: 2vh;
+          transition: background-color 0.25s linear;
+      }
+      .driversBox:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgb(192, 190, 190);
+      }
+      .range {
+          margin-left: 33%;
+          margin-top: 4vh;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .range input {
+          width: 50%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .range span {
+          color: white;
+          margin-bottom:5vh;
+          display: flex;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .range h3 {
+          margin: auto;
+          color: white;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      nav {
+          margin: 25px;
+      }
+      button {
+          background-color: rgb(105, 105, 105);
+          outline: none;
+          border: 0px;
+          color: white;
+          padding: 15px;
+          font-weight: bold;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      input {
+          padding: 14px;
+          outline: none;
+          border: 0px;
+          border-radius: 5px;
+      }
+      .drivers {
+          text-align: left;
+          color: white;
+      }
+
+      .searchBy {
+          color: white;
+          font-weight: bold;
+      }
+      .firstName {
+          font-size: 18px;
+          font-weight: bold;
+      }
+      .secondName {
+          font-size: 22px;
       }
       header {
-        width: 100%;
-        height: 15vh;
-        font-size: 3vh;
-        background-image: url("https://www.tibco.com/sites/tibco/files/styles/banner_large/public/2021-04/main-banner.jpeg?itok=6BXZ4jnP");
-        background-position: center;
-        background-size: cover;
+          width: 100%;
+          height: 25vh;
+          font-size: 3vh;
+          /*background-image: url("https://www.tibco.com/sites/tibco/files/styles/banner_large/public/2021-04/main-banner.jpeg?itok=6BXZ4jnP");*/
+          background-position: center;
+          background-size: cover;
+          background: linear-gradient(to right, #2E9FA3, #FF022E, #FE9016, #094CAD);
+          align-items: center;
+          justify-content: center;
+          animation-name: backgroundgradient;
+          animation-duration: 5s;
+          animation-timing-function: ease-in-out;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+          display: flex;
+          background-size: 600%;
       }
+      @keyframes backgroundgradient {
+        0% {
+          background-position-x: 0%;
+
+        }
+        100% {
+          background-position-x: 100%;
+        }
+      }
+
       header p {
           background: rgba( 255, 255, 255, 0.25 );
           box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -48,71 +153,9 @@
           color: white;
           padding: 25px;
           text-align: center;
-      }
-
-      nav {
-        margin: 25px;
-      }
-
-      button {
-        background-color: rgb(105, 105, 105);
-        outline: none;
-        border: 0px;
-        color: white;
-        padding: 15px;
-        font-weight: bold;
-        font-family: "Lexend", sans-serif;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      input {
-        padding: 14px;
-        outline: none;
-        border: 0px;
-        border-radius: 5px;
-        font-family: "Lexend", sans-serif;
-      }
-
-      .driversBox {
-        padding: 2vh;
-        margin: 0 3vh 0 3vh;
-        list-style-type: none;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 2px solid grey;
-        border-radius: 5px;
-        margin-bottom: 2vh;
-        transition: background-color 0.25s linear;
-        color: white;
-      }
-      .driversBox:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border: 2px solid rgb(192, 190, 190);
-      }
-
-      .firstName {
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .secondName {
-        font-size: 22px;
-      }
-      .range {
-        margin-left: 33%;
-        margin-top: 4vh;
-      }
-      .range input {
-        width: 50%;
-      }
-      .range span {
-        color: white;
-        margin-bottom:5vh;
-        display: flex;
-      }
-      .range h3 {
-        margin: auto;
-        color: white;
+          margin-left: auto;
+          margin-right: auto;
+          width: 8em;
       }
     </style>
   </head>
@@ -121,11 +164,12 @@
      <header><p>F1 Drivers</p></header>
     <!--<SearchDriver :findName="findName" />-->
     <div class="range">
-      <h3>Escolha o ano</h3>
+      <h3>Escolha o ano: {{ yearChanged }} </h3>
       <input type="range" v-model="yearChanged" :year="year" min="1950" max="2021" @change="changeYear(yearChanged)">
-      <span>{{ yearChanged }}</span>
+      <input type="text" v-model="findName" placeholder="pesquisar por nome, ex: lewis" @keyup="resultSearched(findName)" />
+      <p style="color: white;margin: 25px;">Procurando por: {{findName}} </p>
     </div>
-    <div class="driversBox" v-for="(driver, index) in orderDrivers" :key="index">
+    <div class="driversBox" v-for="(driver) in filteredDrivers" :key="driver.url">
        <div class="drivers">
         <div>
           <span class="firstName">{{ driver.givenName }}</span><span class="secondName"> {{ driver.familyName }}</span>
@@ -146,7 +190,8 @@
         infoDrivers: [],
         findName: null,
         year: 2021,
-        yearChanged: this.year,
+        yearChanged: 2021,
+        filteredDrivers: []
       }
   },
   methods: {
@@ -155,20 +200,31 @@
     },
     changeYear: function(yearChanged) {
       this.year = yearChanged
+    },
+    resultSearched: function() {
+      this.filteredDrivers = this.infoDrivers;
+      let findName = this.findName;
+      this.nameCased = this.findName.charAt(0).toUpperCase() + findName.slice(1);
+      if(this.nameCased == '' || this.nameCased == ' ' || this.nameCased == undefined) {
+        this.filteredDrivers = this.infoDrivers;
+      } else {
+        this.filteredDrivers = this.infoDrivers.filter(driver => driver.givenName == this.nameCased)
+      }
     }
   },
   computed: {
     orderDrivers: function() {
-      return _.orderBy(this.infoDrivers,['givenName'],['asc']);
+      return _.orderBy(this.filteredDrivers,['givenName'],['asc']);
     },
   },
   watch: {
     year: function(newYear) {
       console.log(`watch triggered, value of id is: ${newYear}`);
       axios
-        .get(`https://ergast.com/api/f1/${this.year}/drivers.json`)
+        .get(`http://ergast.com/api/f1/${this.year}/drivers.json`)
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
+          this.filteredDrivers = res.data.MRData.DriverTable.Drivers
         }).catch((error) => {
             console.log(error);
         })
@@ -176,14 +232,15 @@
   },
   created: async function ()  {
       axios
-        .get(`https://ergast.com/api/f1/${this.year}/drivers.json`)
+        .get(`http://ergast.com/api/f1/${this.year}/drivers.json`)
         .then(res => {(
           this.infoDrivers = res.data.MRData.DriverTable.Drivers)
+          this.filteredDrivers = res.data.MRData.DriverTable.Drivers
         }).catch((error) => {
             console.log(error);
         })
   },
-})
-    </script>
-  </body>
+}
+</script>
+</body>
 </html>
